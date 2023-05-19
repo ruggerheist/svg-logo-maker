@@ -3,10 +3,9 @@ const { Module } = require("module")
 class Shapes {
     constructor(){
         this.color = ''
-    }
-    setColor(color){
-        this.color = color
-    }
+        this.color = function setColor(data){
+        }
+    }        
 };
 
 class Triangle extends Shapes {
@@ -15,15 +14,24 @@ class Triangle extends Shapes {
     }
 };
 
-module.exports = {Triangle};
+class Circle extends Shapes {
+    render(){
+        return `<circle cx="150" cy="100" r="80" fill='${this.color}' />`
+    }
+};
+
+class Square extends Shapes {
+    render(){
+        return `<rect width="100%" height="100%" fill='${this.color}' />`
+    }
+};
+
+
+module.exports = {Triangle, Circle, Square};
 
 
 {/* <svg version="1.1"
      width="300" height="200"
      xmlns="http://www.w3.org/2000/svg">
-
-  <rect width="100%" height="100%" fill="red" />
-
-  <circle cx="150" cy="100" r="80" fill="green" />
 
 </svg> */}

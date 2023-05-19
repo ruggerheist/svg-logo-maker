@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const {Triangle} = require('./shapes');
+const {Triangle, Circle, Square} = require('./shapes');
 //require fs
 
 class SVG{
@@ -24,6 +24,26 @@ function start(){
 inquirer
   .prompt([
     {
+      type: 'list',
+      name: 'shapes',
+      message: 'What Shape Would You Like?',
+      choices: [
+        {
+          name: 'Triangle',
+          value: 'triangle'
+        },
+        {
+          name: 'Square',
+          value: 'square'
+        },
+        {
+          name: 'Circle',
+          value: 'circle'
+        }
+      ]
+
+    },
+    {
       type: 'input',
       name: 'color',
       message: 'What Color Would You Like Your Shape to Be?',
@@ -45,7 +65,7 @@ inquirer
   ])
   .then((data) => {
     console.log(data);
-    let shape = new Triangle()// switch case or if else
+    let shape = renderShape(data)// switch case or if else
     shape.setColor(`${data.color}`);
     console.log(shape);
     const svg = new SVG();
@@ -53,6 +73,17 @@ inquirer
     svg.setShape(shape);
     console.log(svg);
   })
+  function renderShape(data)  {
+    if (data.shape === 'triangle') {
+      return `${data.shapes.value}` 
+  } else if (data.shape === 'circle') {
+      return `${data.shapes.value}`
+  } else {
+    return `${data.shapes.value}`
+  }
+  };
 }
+
+
 
 start();
