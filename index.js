@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const { SVG } = require('./svg');
+const { SVG } = require('./lib/svg');
 
 function start(){
 inquirer
@@ -51,7 +51,7 @@ inquirer
     console.log(data);   
     const svg = new SVG(data);
     svg.render();
-    console.log(svg);
+    //console.log(svg);
   })  
 }
 
