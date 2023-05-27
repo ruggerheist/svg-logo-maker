@@ -8,6 +8,7 @@
   - [Testing Instructions](#testing-instructions)
   - [Questions](#questions)
 ![Screenshot](https://i.imgur.com/Ryr0bNP.png)
+[Walkthrough Video](https://drive.google.com/file/d/1HlgAtRaWxTF3FIc4tdr2Il7-zEFiyFcA/view?usp=share_link)
 ## Installation Instructions
   - To use the application, Inquirer needs to be installed. To test the application, Jest needs to be installed.
 ## Usage Information
